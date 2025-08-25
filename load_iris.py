@@ -52,7 +52,7 @@ def tune_model(X_train, y_train):
 
     return grid_search.best_estimator_
 best_model = tune_model(X_train, y_train)
-print(best_model)
+print(f'Best Model tunning: {best_model}')
 
 #KNN Model
 def evaluate_model(model, X_test, y_test):
@@ -64,6 +64,6 @@ def evaluate_model(model, X_test, y_test):
     return accuracy, matrix
 
 accuracy, matrix = evaluate_model(best_model, X_test, y_test)
-print(f'Accuracy: {accuracy*100:.2f}%')
-print(f'Confusion matrix: ')
+print(f'KNN Accuracy: {accuracy*100:.2f}%')
+print(f'KNN Confusion matrix: ')
 print(matrix)
